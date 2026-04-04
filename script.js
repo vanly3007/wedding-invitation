@@ -165,3 +165,31 @@ function openQRModal() {
 function closeQRModal() {
     document.getElementById('qrModal').classList.remove('open');
 }
+
+// 8. Countdown Timer Logic (for the new Maroon boxes)
+const weddingDate = new Date("Dec 25, 2025 12:00:00").getTime();
+
+const countdownInterval = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance < 0) {
+        clearInterval(countdownInterval);
+        return;
+    }
+
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+    const dEl = document.getElementById("days");
+    const hEl = document.getElementById("hours");
+    const mEl = document.getElementById("minutes");
+    const sEl = document.getElementById("seconds");
+
+    if (dEl) dEl.innerText = d.toString().padStart(2, '0');
+    if (hEl) hEl.innerText = h.toString().padStart(2, '0');
+    if (mEl) mEl.innerText = m.toString().padStart(2, '0');
+    if (sEl) sEl.innerText = s.toString().padStart(2, '0');
+}, 1000);
