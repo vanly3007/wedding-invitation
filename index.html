@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiệp Cưới - Hải Đăng &amp; Minh Nguyệt</title>
+  <meta name="description" content="Trân trọng kính mời đến dự lễ cưới của Hải Đăng &amp; Minh Nguyệt – 25.12.2025" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- QR Code Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body class="mobile-app-layout">
+
+<!-- Device Frame for Desktop (Center the content like a phone) -->
+<div class="app-container">
+
+<!-- ===== LOADING SCREEN ===== -->
+<div class="loading-screen" id="loadingScreen">
+  <div class="loading-heart">❤</div>
+  <p>Đang mở thiệp cưới...</p>
+</div>
+
+<!-- ===== MUSIC TOGGLE (Top Right) ===== -->
+<div class="music-toggle" id="musicToggle" onclick="toggleMusic()">
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+    <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+  </svg>
+</div>
+<audio id="bgAudio" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg"/>
+</audio>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <!-- Using a high quality wedding placeholder image -->
+    <img src="images/wedding.jpg" alt="Wedding Background" />
+  </div>
+  
+  <div class="hero-top">
+    <div class="hero-date">25 12</div>
+  </div>
+  
+  <div class="hero-mid">
+    <h1 class="hero-main-title">ĐÁM CƯỚI CỦA CHÚNG TỚ</h1>
+    <h2 class="hero-sub-title">our love</h2>
+  </div>
+  
+  <div class="hero-bottom">
+    <div class="hero-names">
+      <div class="hero-name-item">
+        <h3>Hải Đăng</h3>
+        <span>Chú Rể</span>
+      </div>
+      <div class="hero-name-item">
+        <h3>Minh Nguyệt</h3>
+        <span>Cô Dâu</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating bubbles container -->
+  <div class="floating-bubbles" id="bubbleContainer"></div>
+</section>
+
+<!-- ===== STORY SECTION ===== -->
+<section class="story-section" id="story">
+  <div class="container">
+    <div class="story-header" data-animate>
+      <h2>Minh Nguyệt &amp; Hải Đăng</h2>
+      <p>Welcome to our wedding</p>
+    </div>
+
+    <div class="story-timeline">
+      <div class="timeline-item" data-animate>
+        <div class="timeline-img">
+          <img src="images/wedding.jpg" alt="Groom Birth" />
+        </div>
+        <div class="timeline-content">
+          <h3>20.11.1998</h3>
+          <p>Ngày chú rể Hải Đăng cất tiếng khóc chào đời. Một cậu bé kháu khỉnh và đầy năng lượng.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-animate>
+        <div class="timeline-img">
+          <img src="images/wedding.jpg" alt="Bride Birth" />
+        </div>
+        <div class="timeline-content">
+          <h3>05.08.2000</h3>
+          <p>Ngày cô dâu Minh Nguyệt ra đời. Một thiên thần nhỏ với đôi mắt lấp lánh như ngàn sao.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EVENT SECTION ===== -->
+<section class="event-section" id="event">
+  <div class="container">
+    <div class="calendar-card" data-animate>
+      <div class="calendar-header">
+        <h3>Tháng 12 / 2025</h3>
+      </div>
+      <div class="calendar-grid">
+        <div class="cal-day-head">CN</div>
+        <div class="cal-day-head">T2</div>
+        <div class="cal-day-head">T3</div>
+        <div class="cal-day-head">T4</div>
+        <div class="cal-day-head">T5</div>
+        <div class="cal-day-head">T6</div>
+        <div class="cal-day-head">T7</div>
+        
+        <!-- Row 1 -->
+        <div class="cal-day"></div><div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day">5</div><div class="cal-day">6</div>
+        <!-- Row 2 -->
+        <div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day">12</div><div class="cal-day">13</div>
+        <!-- Row 3 -->
+        <div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day">19</div><div class="cal-day">20</div>
+        <!-- Row 4 -->
+        <div class="cal-day">21</div><div class="cal-day">22</div><div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day active">25</div><div class="cal-day">26</div><div class="cal-day">27</div>
+        <!-- Row 5 -->
+        <div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div><div class="cal-day">31</div><div class="cal-day"></div><div class="cal-day"></div><div class="cal-day"></div>
+      </div>
+    </div>
+
+    <div class="venue-info" data-animate>
+      <h4>TIỆC CƯỚI CHÚNG TỚ</h4>
+      <p>Thứ Năm, ngày 25 tháng 12 năm 2025 <br> (Nhằm ngày 06 tháng 11 năm Ất Tỵ)</p>
+      <p>Trung tâm Hội nghị Tiệc cưới Gem Center <br> 08 Nguyễn Bỉnh Khiêm, Đa Kao, Quận 1, TP.HCM</p>
+      <a href="https://maps.google.com" target="_blank" class="map-btn">XEM BẢN ĐỒ</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY SECTION ===== -->
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="story-header" data-animate>
+      <h2>Khoảnh khắc</h2>
+      <p>Our Gallery</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item" data-animate><img src="images/wedding.jpg" alt="Gallery 1" /></div>
+      <div class="gallery-item" data-animate><img src="images/wedding.jpg" alt="Gallery 2" /></div>
+      <div class="gallery-item" data-animate><img src="images/wedding.jpg" alt="Gallery 3" /></div>
+      <div class="gallery-item" data-animate><img src="images/wedding.jpg" alt="Gallery 4" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RSVP SECTION ===== -->
+<section class="rsvp-section" id="rsvp">
+  <div class="container">
+    <div class="rsvp-form-container" data-animate>
+      <h2>Xác nhận tham dự</h2>
+      <p>Sự hiện diện của bạn là niềm vinh hạnh của chúng tôi</p>
+      
+      <div id="rsvpForm">
+        <div class="form-group">
+          <label>Họ và tên *</label>
+          <input type="text" id="rsvp_name" class="form-input" placeholder="Nhập tên của bạn">
+        </div>
+        
+        <div class="form-group">
+          <label>Bạn có tham dự không? *</label>
+          <div class="radio-group">
+            <label class="radio-item">
+              <input type="radio" name="attend" value="yes" checked>
+              <span>Có, mình sẽ tham dự</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="attend" value="no">
+              <span>Xin lỗi, mình bận mất rồi...</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="rsvp-submit" onclick="submitRSVP()">GỬI PHẢN HỒI</button>
+      </div>
+      
+      <div id="rsvpThanks" style="display:none">
+        <p style="font-size: 1.5rem; color: var(--primary-pink);">❤ Cảm ơn bạn rất nhiều! ❤</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOTTOM TOOLBAR ===== -->
+<div class="bottom-toolbar">
+  <div class="toolbar-left">
+    <input type="text" class="toolbar-input" placeholder="Gửi lời chúc đến chúng mình..." id="wishInput">
+  </div>
+  <div class="toolbar-right">
+    <div class="toolbar-icon" onclick="sendWish()">💬</div>
+    <div class="toolbar-icon heart-btn" onclick="sprayHearts(event)">
+      ❤
+      <span class="heart-count" id="heartCount">26</span>
+    </div>
+    <div class="toolbar-icon" onclick="showGiftModal()">🎁</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+<!-- QR Code Modal (Scan to visit on phone) -->
+<div class="qr-modal" id="qrModal" onclick="closeQRModal()">
+  <div class="qr-content" onclick="event.stopPropagation()">
+    <h3>Quét mã để xem bản Mobile</h3>
+    <div id="qrcode"></div>
+    <p>Dùng camera điện thoại để quét mã QR này</p>
+    <button class="qr-close" onclick="closeQRModal()">Đóng</button>
+  </div>
+</div>
+
+<!-- Floating QR Button (Desktop only) -->
+<div class="qr-float-btn" onclick="openQRModal()">
+  <span>📱 Quét QR</span>
+</div>
+
+</div> <!-- End .app-container -->
+</body>
+</html>
