@@ -97,13 +97,19 @@ a   { text-decoration: none; color: inherit; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 1; /* Bring above app-container background */
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
 }
 .hero-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.9);
+  display: block;
 }
 
 .hero-top {
@@ -113,11 +119,12 @@ a   { text-decoration: none; color: inherit; }
 
 .hero-date {
   font-family: var(--font-serif);
-  font-size: 5rem;
-  color: var(--white);
-  letter-spacing: 15px;
+  font-size: clamp(4rem, 15vw, 6rem);
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 12px;
   line-height: 1;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  font-weight: 200;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 .hero-mid {
@@ -126,20 +133,23 @@ a   { text-decoration: none; color: inherit; }
 
 .hero-main-title {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
+  font-size: clamp(1.2rem, 5.5vw, 1.8rem); /* Adjusted for better fit */
   color: var(--primary-pink);
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 20px;
-  text-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  margin-bottom: 8px;
+  white-space: nowrap;
+  font-weight: 500;
+  overflow: hidden; /* Prevent overflow */
+  text-overflow: ellipsis;
 }
 
 .hero-sub-title {
-  font-family: var(--font-script);
-  font-size: 3.5rem;
+  font-family: 'Allison', cursive;
+  font-size: clamp(2.5rem, 9vw, 3.5rem);
   color: var(--white);
-  font-weight: normal;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  font-weight: 400;
+  opacity: 1;
 }
 
 .hero-bottom {
@@ -148,9 +158,13 @@ a   { text-decoration: none; color: inherit; }
 }
 
 .hero-names {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between;
+  padding: 0 10%;
   font-family: var(--font-serif);
 }
 
@@ -160,15 +174,16 @@ a   { text-decoration: none; color: inherit; }
 }
 
 .hero-name-item h3 {
-  font-size: 2rem;
-  margin-bottom: 5px;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  margin-bottom: 2px;
 }
 
 .hero-name-item span {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--white);
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
 }
 
 /* Floating Message Bubbles */
@@ -198,8 +213,89 @@ a   { text-decoration: none; color: inherit; }
 }
 
 /* ================================================
-   STORY SECTION
+   PARENTS INFO (Nhà Có Hỷ)
    ================================================ */
+.parents-info {
+  display: flex;
+  position: relative;
+  padding: 40px 10px;
+  background: #fff;
+  margin: 60px 0 60px 40px;
+  border-left: 1.5px solid #ccc;
+  min-height: 380px;
+}
+
+.side-title {
+  position: absolute;
+  left: -48px;
+  top: 15px;
+  writing-mode: vertical-rl;
+  font-family: var(--font-script);
+  font-size: 2.8rem;
+  color: #8c2020;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.parents-lists {
+  flex: 1;
+  padding: 0 20px;
+  text-align: left;
+}
+
+.family-group {
+  margin-bottom: 40px;
+}
+
+.family-group h3 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.family-group p {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.family-group small {
+  display: block;
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: 6px;
+  letter-spacing: 0.5px;
+}
+
+.red-sidebar {
+  width: 55px;
+  background: #681111;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 0;
+  color: #fff;
+  border-radius: 4px;
+  justify-content: space-between;
+  box-shadow: 2px 4px 10px rgba(0,0,0,0.15);
+  margin-right: -10px;
+}
+
+.circle-dot {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.hys-icon {
+  font-size: 1.8rem;
+  opacity: 0.9;
+  font-family: serif;
+}
 .story-section {
   padding: 80px 0;
   background: var(--white);
@@ -224,49 +320,85 @@ a   { text-decoration: none; color: inherit; }
   color: var(--medium-gray);
 }
 
-.story-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+.birth-container {
+  text-align: center;
+  padding: 20px 0 60px;
 }
 
-.timeline-item {
+.birth-header {
   display: flex;
   align-items: center;
-  gap: 40px;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
 }
 
-.timeline-item:nth-child(even) {
-  flex-direction: row-reverse;
+.birth-header .rose-img {
+  width: 28px;
+  height: auto;
+  filter: brightness(0) saturate(100%);
+  margin-top: 5px;
 }
 
-.timeline-img {
+.birth-header h2 {
+  font-family: 'Allison', cursive;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #333;
+  line-height: 1;
+  margin-left: -5px;
+}
+
+.birth-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto 30px;
+  padding: 0 10px;
+}
+
+.birth-item {
   flex: 1;
-  position: relative;
 }
 
-.timeline-img img {
+.circle-img {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  border: 1px solid var(--primary-pink);
+  overflow: hidden;
+  padding: 4px;
+}
+
+.circle-img img {
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px var(--shadow-md);
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-.timeline-content {
-  flex: 1;
-  text-align: center;
+.birth-item h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #222;
 }
 
-.timeline-content h3 {
+.birth-item p {
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.6;
+  max-width: 180px;
+  margin: 0 auto;
+}
+
+.birth-footer {
   font-family: var(--font-serif);
   font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-
-.timeline-content p {
-  font-family: var(--font-serif);
-  font-style: italic;
-  line-height: 1.8;
-  color: var(--medium-gray);
+  color: #333;
+  margin-top: 30px;
 }
 
 /* ================================================

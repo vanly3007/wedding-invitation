@@ -36,20 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Floating Bubbles in Hero
-    const bubbleContainer = document.getElementById('bubbleContainer');
-    const messages = [
-        "Chúc mừng hạnh phúc! 🌸",
-        "Mãi yêu nhé! ❤",
-        "Trăm năm hạnh phúc nha",
-        "Tuyệt vời quá đi!",
-        "Chờ ngày này lâu lắm rồi",
-        "Hải Đăng & Minh Nguyệt",
-        "Hạnh phúc nha!",
-        "Quá là xứng đôi luôn",
-        "Gửi ngàn lời chúc tốt đẹp",
-        "Tình yêu vĩnh cửu"
-    ];
+    // // 3. Floating Bubbles in Hero
+    // const bubbleContainer = document.getElementById('bubbleContainer');
+    // const messages = [
+    //     "Chúc mừng hạnh phúc! 🌸",
+    //     "Mãi yêu nhé! ❤",
+    //     "Trăm năm hạnh phúc nha",
+    //     "Tuyệt vời quá đi!",
+    //     "Chờ ngày này lâu lắm rồi",
+    //     "Hải Đăng & Minh Nguyệt",
+    //     "Hạnh phúc nha!",
+    //     "Quá là xứng đôi luôn",
+    //     "Gửi ngàn lời chúc tốt đẹp",
+    //     "Tình yêu vĩnh cửu"
+    // ];
 
     function createBubble() {
         const bubble = document.createElement('div');
