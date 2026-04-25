@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360" fill="none" role="img" aria-label="Gift illustration">
+  <defs>
+    <style>
+      .ol{stroke:#1f1f1f;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+
+  <!-- HEARTS -->
+  <g transform="translate(0 0)">
+    <path d="M214 70c10-14 32-12 40 4 9 20-15 41-40 57-25-16-49-37-40-57 8-16 30-18 40-4Z" fill="#FF6A3D"/>
+    <path d="M246 102c7-10 22-9 28 3 6 14-11 28-28 39-17-11-34-25-28-39 6-12 21-13 28-3Z" fill="#FF6A3D" opacity=".92"/>
+  </g>
+
+  <!-- VERTICAL ENVELOPE + CARD (slightly tilted like the reference) -->
+  <g transform="translate(210 210) rotate(-18) translate(-210 -210)">
+    <!-- Back card -->
+    <rect x="166" y="96" width="140" height="120" rx="16" fill="#CFEEDF"/>
+    <path d="M202 154c18-12 40 10 64-8" class="ol" opacity=".85"/>
+
+    <!-- Envelope body -->
+    <rect x="150" y="150" width="150" height="175" rx="20" fill="#F7B2A8"/>
+
+    <!-- Envelope folds -->
+    <path d="M150 170l75 70 75-70" fill="#F7B2A8"/>
+
+    <!-- Outline (thick, like the sample) -->
+    <rect x="150" y="150" width="150" height="175" rx="20" fill="none" class="ol"/>
+    <path d="M150 170l75 70 75-70" fill="none" class="ol"/>
+    <path d="M150 325l75-65 75 65" fill="none" class="ol"/>
+  </g>
+
+  <!-- BUD FLOWER (left, aligned like reference) -->
+  <g transform="translate(0 0)">
+    <!-- Stem -->
+    <path d="M84 210c34 18 58 48 70 92" fill="none" stroke="#6AAE78" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Leaves -->
+    <path d="M108 278c-18-2-34-16-36-34 22-2 38 10 46 24" fill="#7CCB8A"/>
+    <path d="M140 292c16 6 26 20 26 36-22 4-40-8-46-22" fill="#7CCB8A" opacity=".92"/>
+
+    <!-- Bud -->
+    <path d="M58 208c26-20 58-12 72 10-20 20-52 20-72-10Z" fill="#E9EEF3"/>
+    <path d="M52 204c-8-10-2-24 10-28 12 12 12 28-10 28Z" fill="#E9EEF3"/>
+    <path d="M118 206c-6 10-2 24 12 28 12-14 12-30-12-28Z" fill="#E9EEF3"/>
+
+    <!-- Orange dots -->
+    <circle cx="70" cy="196" r="6" fill="#FF7A45"/>
+    <circle cx="82" cy="190" r="4.5" fill="#FF7A45"/>
+    <circle cx="92" cy="198" r="5" fill="#FF7A45"/>
+  </g>
+</svg>

@@ -29,8 +29,9 @@
     <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
   </svg>
 </div>
+
 <audio id="bgAudio" loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg"/>
+  <source src="https://assets.cinelove.me/mp3/0e470330-e4d4-4fdc-8d99-830aab66916c.mp3" type="audio/mpeg"/>
 </audio>
 
 <!-- ===== HERO SECTION ===== -->
@@ -71,7 +72,11 @@
   <div class="container">
     <div class="story-header" data-animate>
       <h2>Trân trọng thông báo lễ thành hôn</h2>
-      <p>Hải Đăng &amp; Minh Nguyệt</p>
+      <p class="story-names">
+        <span class="story-name story-name-left">Hải Đăng</span>
+        <span class="story-name story-name-amp">&amp;</span>
+        <span class="story-name story-name-right">Minh Nguyệt</span>
+      </p>
     </div>
 
     <!-- ===== PARENTS INFO SECTION ===== -->
@@ -103,22 +108,24 @@
 <section class="event-section" id="event">
   <div class="container">
     <!-- ===== EVENT OPENING ===== -->
-    <div class="event-opening" data-animate>
-      <div class="event-top-names">L.O.V.E</div>
+    <div class="event-opening">
+      <div class="event-top-names love-dance" aria-label="L.O.V.E">
+        <span class="love-char">L</span><span class="love-char dot">.</span><span class="love-char">O</span><span class="love-char dot">.</span><span class="love-char">V</span><span class="love-char dot">.</span><span class="love-char">E</span>
+      </div>
       
-      <div class="event-main-photo">
+      <div class="event-main-photo" data-animate>
         <img src="images/wedding-2.webp" alt="Wedding Photo">
       </div>
 
       <div class="event-details">
-        <div class="we-got-married">We got married</div>
-        <h2 class="event-title">LỄ THÀNH HÔN</h2>
+        <div class="we-got-married" data-animate>We got married</div>
+        <h2 class="event-title event-pulse">LỄ THÀNH HÔN</h2>
         
         <div class="event-date-v2">
           <div class="date-v2-top">THỨ NĂM</div>
           
           <div class="date-v2-middle">
-            <div class="date-v2-side">
+            <div class="date-v2-side date-v2-left" data-animate>
               <div class="date-line"></div>
               <div class="date-text-row">
                 <span class="txt-med">THÁNG</span>
@@ -127,9 +134,9 @@
               <div class="date-line"></div>
             </div>
             
-            <div class="date-v2-center">25</div>
+            <div class="date-v2-center event-pulse">25</div>
             
-            <div class="date-v2-side">
+            <div class="date-v2-side date-v2-right" data-animate>
               <div class="date-line"></div>
               <div class="date-text-row">
                 <span class="txt-med">NĂM</span>
@@ -193,15 +200,15 @@
     <div class="venue-split-wrapper" data-animate>
       <div class="venue-flex">
         <!-- Left Photo -->
-        <div class="venue-photo-side">
+        <div class="venue-photo-side" data-animate>
           <img src="images/wedding-5.webp" alt="Wedding Portrait">
         </div>
         
         <!-- Right Info -->
         <div class="venue-info-side">
           <div class="address-title">ADDRESS</div>
-          <h3 class="venue-name-bold">TƯ GIA NHÀ TRAI</h3>
-          <p class="venue-detail">Hoàng Mai - Hà Nội</p>
+          <h3 class="venue-name-bold" data-animate>TƯ GIA NHÀ TRAI</h3>
+          <p class="venue-detail" data-animate>Hoàng Mai - Hà Nội</p>
           
           <div class="map-mini-box">
             <!-- Simulated map with floral touch or actual map image -->
@@ -240,13 +247,14 @@
 <section class="birth-section" id="destiny">
   <div class="container">
     <div class="birth-container" data-animate>
+      <!-- Part 1: Original Destiny Info (Restored) -->
       <div class="birth-header">
         <img src="https://assets.cinelove.me/templates/assets/5913a014-9fc0-4a7d-aa73-31416a84d0b7/12e92387-87c8-49dd-bf7c-bfa76a73c108.png" class="rose-img" alt="Rose">
         <h2>Định Mệnh</h2>
       </div>
 
       <div class="birth-grid">
-        <div class="birth-item">
+        <div class="birth-item birth-left" data-animate>
           <div class="circle-img">
             <img src="images/wedding.jpg" alt="Hải Đăng">
           </div>
@@ -254,7 +262,7 @@
           <p>Ngày chú rể Hải Đăng cất tiếng khóc chào đời. Một cậu bé kháu khỉnh và đầy năng lượng.</p>
         </div>
 
-        <div class="birth-item">
+        <div class="birth-item birth-right" data-animate>
           <div class="circle-img">
             <img src="images/wedding.jpg" alt="Minh Nguyệt">
           </div>
@@ -263,23 +271,52 @@
         </div>
       </div>
 
-      <div class="birth-footer">Hải Đăng &amp; Minh Nguyệt</div>
+      <div class="birth-footer" data-animate>Hải Đăng &amp; Minh Nguyệt</div>
+
+      <!-- Part 2: Premium Photo Grid (Added After) -->
+      <div class="birth-photo-grid" style="margin-top: 60px;">
+        <div class="grid-top-big grid-from-top" data-animate>
+          <img src="images/wedding-9.webp" alt="Wedding Moments">
+        </div>
+        <div class="grid-bottom-row">
+          <div class="grid-down-img grid-from-left" data-animate>
+            <img src="images/wedding-7.webp" alt="Wedding Moments">
+          </div>
+          <div class="grid-down-img grid-from-right" data-animate>
+            <img src="images/wedding-8.webp" alt="Wedding Moments">
+          </div>
+        </div>
+      </div>
+
+      <!-- Poetic Quote Album -->
+      <div class="birth-quote">
+        <p>Mờ sương lạc chốn thần tiên,</p>
+        <p>Cùng nhau đi hết bốn miền xuân thu.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== GALLERY SECTION ===== -->
 <section class="gallery-section" id="gallery">
-  <div class="container">
-    <div class="story-header" data-animate>
+  <!-- Blurred Background Layer -->
+  <div class="gallery-blur-bg"></div>
+  
+  <div class="container" style="position: relative; z-index: 2;">
+    <!-- Final Title Header (Matching "Định Mệnh" style) -->
+    <div class="birth-header" data-animate>
+      <img src="https://assets.cinelove.me/templates/assets/5913a014-9fc0-4a7d-aa73-31416a84d0b7/12e92387-87c8-49dd-bf7c-bfa76a73c108.png" class="rose-img" alt="Rose">
       <h2>Khoảnh khắc</h2>
-      <p>Our Gallery</p>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item" data-animate><img src="images/wedding.jpg" alt="Gallery 1" /></div>
-      <div class="gallery-item" data-animate><img src="images/wedding.jpg" alt="Gallery 2" /></div>
-      <div class="gallery-item" data-animate><img src="images/wedding.jpg" alt="Gallery 3" /></div>
-      <div class="gallery-item" data-animate><img src="images/wedding.jpg" alt="Gallery 4" /></div>
+
+    <!-- 2 Large Featured Images -->
+    <div class="gallery-premium-list">
+      <div class="gallery-large-item" data-animate>
+        <img src="images/wedding-10.webp" alt="Wedding Moment 1">
+      </div>
+      <div class="gallery-large-item" data-animate>
+        <img src="images/wedding-12.jpg" alt="Wedding Moment 2">
+      </div>
     </div>
   </div>
 </section>
@@ -288,31 +325,88 @@
 <section class="rsvp-section" id="rsvp">
   <div class="container">
     <div class="rsvp-form-container" data-animate>
-      <h2>Xác nhận tham dự</h2>
-      <p>Sự hiện diện của bạn là niềm vinh hạnh của chúng tôi</p>
+      <h2 class="formal-title">Xác nhận tham dự</h2>
+      <p class="rsvp-subtitle">Sự hiện diện của bạn là niềm vinh hạnh <br> của chúng tôi</p>
       
       <div id="rsvpForm">
         <div class="form-group">
-          <label>Họ và tên *</label>
+          <label>Họ và tên</label>
           <input type="text" id="rsvp_name" class="form-input" placeholder="Nhập tên của bạn">
         </div>
         
         <div class="form-group">
-          <label>Bạn có tham dự không? *</label>
-          <div class="radio-group">
-            <label class="radio-item">
+          <label>Bạn sẽ tham dự chứ?</label>
+          <div class="radio-buttons-v2">
+            <label class="radio-item-v2">
               <input type="radio" name="attend" value="yes" checked>
               <span>Có, mình sẽ tham dự</span>
             </label>
-            <label class="radio-item">
+            <label class="radio-item-v2">
               <input type="radio" name="attend" value="no">
               <span>Xin lỗi, mình bận mất rồi...</span>
             </label>
           </div>
         </div>
 
-        <button class="rsvp-submit" onclick="submitRSVP()">GỬI PHẢN HỒI</button>
+        <div class="form-group">
+          <label>Số lượng người tham dự</label>
+          <select id="rsvp_guests" class="form-input">
+            <option value="1">1 người</option>
+            <option value="2">2 người</option>
+            <option value="3">3 người</option>
+            <option value="4">4 người</option>
+          </select>
+        </div>
+
+        <button class="rsvp-submit-btn-v2" onclick="submitRSVP()">Gửi xác nhận</button>
       </div>
+    </div>
+
+    <!-- ===== GIFT MINI SECTION ===== -->
+    <div class="gift-area-v2" data-animate onclick="openGiftModal()">
+      <div class="gift-illustration-v2">
+         <img class="gift-illustration-img" src="images/valentines-letter-templates.svg" alt="Gift Illustration">
+      </div>
+      <p class="gift-text-v2">Gửi quà tới cô dâu chú rể</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GIFT MODAL ===== -->
+<div id="giftModal" class="gift-modal">
+  <div class="modal-content">
+    <h3>Hộp Quà Yêu Thương</h3>
+    <p class="modal-desc">Quét QR code để gửi yêu thương trực tiếp tới:</p>
+    
+    <div class="bank-grid">
+      <!-- Groom Card -->
+      <div class="bank-card groom-theme">
+        <span class="bank-label label-groom">Chú rể</span>
+        <div class="qr-frame">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=GroomAccountDetails" alt="Groom QR">
+        </div>
+        <p class="account-name">GROOM CINELOVE</p>
+        <p class="bank-name">CINELOVE BANK</p>
+        <p class="account-num" id="groomNum">123456789</p>
+        <button class="copy-btn copy-groom" onclick="copyToClipboard('123456789')">Sao chép số TK</button>
+      </div>
+
+      <!-- Bride Card -->
+      <div class="bank-card bride-theme">
+        <span class="bank-label label-bride">Cô dâu</span>
+        <div class="qr-frame">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BrideAccountDetails" alt="Bride QR">
+        </div>
+        <p class="account-name">BRIDE CINELOVE</p>
+        <p class="bank-name">CINELOVE BANK</p>
+        <p class="account-num" id="brideNum">123456789</p>
+        <button class="copy-btn copy-bride" onclick="copyToClipboard('123456789')">Sao chép số TK</button>
+      </div>
+    </div>
+
+    <button class="modal-close-btn" onclick="closeGiftModal()">Đóng</button>
+  </div>
+</div>
       
       <div id="rsvpThanks" style="display:none">
         <p style="font-size: 1.5rem; color: var(--primary-pink);">❤ Cảm ơn bạn rất nhiều! ❤</p>
@@ -339,18 +433,27 @@
 <script src="script.js"></script>
 
 <!-- QR Code Modal (Scan to visit on phone) -->
-<div class="qr-modal" id="qrModal" onclick="closeQRModal()">
+<div class="qr-modal" id="qrModal" onclick="closeQrModal()">
   <div class="qr-content" onclick="event.stopPropagation()">
     <h3>Quét mã để xem bản Mobile</h3>
     <div id="qrcode"></div>
     <p>Dùng camera điện thoại để quét mã QR này</p>
-    <button class="qr-close" onclick="closeQRModal()">Đóng</button>
+    <button class="qr-close" onclick="closeQrModal()">Đóng</button>
   </div>
 </div>
 
 <!-- Floating QR Button (Desktop only) -->
-<div class="qr-float-btn" onclick="openQRModal()">
-  <span>📱 Quét QR</span>
+<div class="qr-float-btn" id="qrFloatBtn">
+  <div class="qr-float-card" aria-label="QR xem trên điện thoại">
+    <button class="qr-float-close" type="button" aria-label="Thu nhỏ QR" onclick="minimizeFloatQr(event)">×</button>
+    <div class="qr-float-qr">
+      <div class="qr-float-qr-inner" id="qrcodeFloat"></div>
+    </div>
+    <div class="qr-float-caption">Quét mã QR để xem<br>trên điện thoại</div>
+  </div>
+  <button class="qr-float-mini" type="button" aria-label="Mở QR" onclick="restoreFloatQr()">
+    <img src="images/400x400ia-75.webp" alt="" />
+  </button>
 </div>
 
 </div> <!-- End .app-container -->
