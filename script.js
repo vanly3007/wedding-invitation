@@ -7,7 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
-    const scroller = document.querySelector('.app-container') || window;
+    const scroller =
+        document.getElementById('appScroll') ||
+        document.querySelector('.app-scroll') ||
+        document.querySelector('.app-container') ||
+        window;
     if (scroller !== window) scroller.scrollTop = 0;
     else window.scrollTo(0, 0);
 
@@ -260,16 +264,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // // 3. Floating Bubbles in Hero
     // const bubbleContainer = document.getElementById('bubbleContainer');
     // const messages = [
-    //     "Chc m?ng h?nh phc! ??",
-    //     "Mi yu nh! ?",
-    //     "Tr?m n?m h?nh phc nha",
-    //     "Tuy?t v?i qu ?i!",
-    //     "Ch? ngy ny lu l?m r?i",
+    //     "Chï¿½c m?ng h?nh phï¿½c! ??",
+    //     "Mï¿½i yï¿½u nhï¿½! ?",
+    //     "Tr?m n?m h?nh phï¿½c nha",
+    //     "Tuy?t v?i quï¿½ ?i!",
+    //     "Ch? ngï¿½y nï¿½y lï¿½u l?m r?i",
     //     "H?i ??ng & Minh Nguy?t",
-    //     "H?nh phc nha!",
-    //     "Qu l x?ng ?i lun",
-    //     "G?i ngn l?i chc t?t ??p",
-    //     "Tnh yu v?nh c?u"
+    //     "H?nh phï¿½c nha!",
+    //     "Quï¿½ lï¿½ x?ng ?ï¿½i luï¿½n",
+    //     "G?i ngï¿½n l?i chï¿½c t?t ??p",
+    //     "Tï¿½nh yï¿½u v?nh c?u"
     // ];
 
     function createBubble() {
@@ -365,7 +369,7 @@ function sprayHearts(e) {
 function submitRSVP() {
     const name = document.getElementById('rsvp_name').value;
     if(!name) {
-        alert('Vui lng nh?p tn c?a b?n!');
+        alert('Vui lï¿½ng nh?p tï¿½n c?a b?n!');
         return;
     }
     document.getElementById('rsvpForm').style.display = 'none';
@@ -376,12 +380,12 @@ function sendWish() {
     const input = document.getElementById('wishInput');
     if(!input.value) return;
     
-    alert('C?m ?n b?n ? g?i l?i chc: ' + input.value);
+    alert('C?m ?n b?n ?ï¿½ g?i l?i chï¿½c: ' + input.value);
     input.value = '';
 }
 
 function showGiftModal() {
-    alert('Thng tin chuy?n kho?n: \n- Ngn hng: VCB \n- STK: 1234567890 \n- Ch? TK: NGUYEN HAI DANG');
+    alert('Thï¿½ng tin chuy?n kho?n: \n- Ngï¿½n hï¿½ng: VCB \n- STK: 1234567890 \n- Ch? TK: NGUYEN HAI DANG');
 }
 
 // 7. QR Modal Controls
@@ -447,9 +451,9 @@ function closeGiftModal() {
 
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => {
-    alert(' sao chp s? ti kho?n: ' + text);
+    alert('ï¿½ï¿½ sao chï¿½p s? tï¿½i kho?n: ' + text);
   }).catch(err => {
-    console.error('L?i khi sao chp: ', err);
+    console.error('L?i khi sao chï¿½p: ', err);
   });
 }
 

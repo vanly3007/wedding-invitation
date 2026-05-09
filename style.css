@@ -25,9 +25,10 @@ body {
   background: #f0f0f0; /* Desktop background color */
   color: var(--dark-gray);
   overflow: hidden; /* scroll happens inside .app-container */
-  display: flex;
-  justify-content: center;
-  height: 100%;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  width: 100vw;
 }
 
 /* Central Mobile Frame on Desktop */
@@ -39,9 +40,17 @@ body {
   background: var(--white);
   box-shadow: 0 0 50px rgba(0,0,0,0.1);
   position: relative;
+  overflow: hidden; /* the scroll is in .app-scroll */
+}
+
+/* Scrollable content inside the card */
+.app-scroll {
+  height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 140px; /* allow scrolling past fixed toolbar */
 }
 
 /* Full screen on mobile */
@@ -53,13 +62,13 @@ body {
 }
 
 /* Optional: nicer scrollbar inside the card */
-.app-container::-webkit-scrollbar {
+.app-scroll::-webkit-scrollbar {
   width: 10px;
 }
-.app-container::-webkit-scrollbar-track {
+.app-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
-.app-container::-webkit-scrollbar-thumb {
+.app-scroll::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.18);
   border-radius: 999px;
   border: 3px solid rgba(255, 255, 255, 0.7);
@@ -837,6 +846,9 @@ a   { text-decoration: none; color: inherit; }
   .event-pulse {
     animation: none;
   }
+  .cal-num.active-heart {
+    animation: none;
+  }
   .event-main-photo,
   .we-got-married,
   .date-v2-left,
@@ -1066,6 +1078,9 @@ a   { text-decoration: none; color: inherit; }
   color: #fff;
   font-weight: 600;
   z-index: 1;
+  animation: calHeartPulse 3.8s ease-in-out infinite;
+  transform-origin: 50% 55%;
+  will-change: transform;
 }
 
 .cal-num.active-heart::before {
@@ -1077,6 +1092,12 @@ a   { text-decoration: none; color: inherit; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@keyframes calHeartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
 }
 
 .cal-day.active {
@@ -1362,7 +1383,7 @@ a   { text-decoration: none; color: inherit; }
    RSVP SECTION (Floating Card & Gift Area)
    ================================================ */
 .rsvp-section {
-  padding: 0 0 100px;
+  padding: 0 0 20px;
   background: transparent;
   text-align: center;
   position: relative;
@@ -1553,6 +1574,69 @@ select.form-input {
   z-index: 1000;
 }
 
+/* ================================================
+   THANKS FOOTER SECTION
+   ================================================ */
+.thanks-section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: #111;
+  opacity: 1;
+  transform: none;
+}
+
+.thanks-section[data-animate] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: transform 1600ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 1600ms ease;
+  will-change: transform, opacity;
+}
+
+.thanks-section[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.thanks-media {
+  position: absolute;
+  inset: 0;
+}
+
+.thanks-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.thanks-title {
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%);
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 10vw, 4.2rem);
+  letter-spacing: 4px;
+  color: #8c2020;
+  text-transform: uppercase;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thanks-section {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
 .toolbar-left {
   flex: 1;
 }
@@ -1653,6 +1737,110 @@ select.form-input {
   .timeline-item { flex-direction: column !important; gap: 20px; }
   .calendar-card { padding: 20px; }
   .cal-day { font-size: 0.9rem; }
+}
+
+/* Small phones (Samsung A05s / iPhone mini range) */
+@media (max-width: 420px) {
+  /* EVENT DETAILS: prevent month/year overflow */
+  .date-v2-center {
+    font-size: 5.4rem;
+    padding: 0 10px;
+  }
+
+  .date-v2-top,
+  .date-v2-bottom {
+    font-size: 1.15rem;
+    letter-spacing: 3px;
+  }
+
+  .txt-med { font-size: 1.1rem; letter-spacing: 1.5px; }
+  .txt-small { font-size: 0.95rem; }
+
+  .date-v2-side { gap: 10px; }
+  .date-text-row { gap: 8px; }
+  .date-line { opacity: 0.45; }
+
+  /* VENUE: stack to one column */
+  .venue-flex {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .venue-photo-side {
+    flex: unset;
+    height: 340px;
+  }
+
+  .venue-info-side {
+    flex: unset;
+    padding: 22px 18px 18px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .address-title {
+    font-size: 2.6rem;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+
+  .venue-name-bold { text-align: center; }
+  .venue-detail { text-align: center; }
+
+  .map-mini-box {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .countdown-grid-v2 {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+  }
+}
+
+/* Medium phones: keep 2-column but tighten spacing (e.g. iPhone 14 Pro Max) */
+@media (max-width: 520px) and (min-width: 421px) {
+  .venue-flex {
+    min-height: 300px;
+  }
+
+  .venue-photo-side {
+    flex: 1.2;
+  }
+
+  .venue-info-side {
+    flex: 0.8;
+    padding: 22px 14px 22px 18px;
+  }
+
+  .address-title {
+    font-size: 3.0rem;
+    margin-bottom: 14px;
+    letter-spacing: -1px;
+  }
+
+  .map-mini-box {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Countdown: avoid overlap issues on some widths */
+  .countdown-grid-v2 {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .date-v2-center { font-size: 5rem; }
+  .txt-med { font-size: 1rem; }
+  .txt-small { font-size: 0.9rem; }
+  .address-title { font-size: 2.35rem; }
+  .venue-photo-side { height: 300px; }
 }
 
 /* QR Code & Modal Styles */
